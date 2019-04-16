@@ -1,0 +1,87 @@
+{
+  "name": "@icedesign/algorithm-model-admin-scaffold",
+  "version": "1.0.0",
+  "description": "该模板适用于数据模型类的管理类后台，内置通用的介绍页和丰富的区块，使用时需要根据需求进行删除和添加",
+  "files": [
+    "src/",
+    "build/",
+    "public/",
+    "tests/",
+    "_gitignore",
+    ".editorconfig",
+    ".eslintignore",
+    ".eslintrc"
+  ],
+  "keywords": [
+    "ice-scaffold"
+  ],
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "lint": "eslint . --ext '.js,.jsx' --fix"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.com",
+    "access": "public"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@antv/data-set": "^0.9.6",
+    "@icedesign/container": "^1.x",
+    "@icedesign/form-binder": "^1.x",
+    "@icedesign/foundation-symbol": "^1.x",
+    "@icedesign/img": "^1.x",
+    "@icedesign/layout": "^1.x",
+    "@icedesign/theme": "^1.x",
+    "axios": "^0.18.0",
+    "bizcharts": "^3.2.2",
+    "classnames": "^2.2.5",
+    "cross-fetch": "^3.0.2",
+    "moment": "^2.23.0",
+    "ol": "^5.3.1",
+    "prop-types": "^15.5.8",
+    "react": "^16.4.1",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.4.1",
+    "react-intl": "^2.8.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "5.0.0-alpha.6",
+    "redux": "3.6.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "video.js": "^7.4.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.3",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "ice-scripts": "^1.6.0-next.3"
+  },
+  "buildConfig": {
+    "theme": "@icedesign/theme",
+    "entry": "src/index.js",
+    "localization": true,
+    "output": {
+      "publicPath": "./"
+    }
+  },
+  "scaffoldConfig": {
+    "builder": "ice-scripts",
+    "name": "ice-algorithm-model-admin",
+    "title": "智慧城市管理系统",
+    "categories": [
+      "行业领域"
+    ],
+    "screenshot": "https://img.alicdn.com/tfs/TB1R.aPDSzqK1RjSZFjXXblCFXa-2860-1580.png",
+    "screenshots": [
+      "https://img.alicdn.com/tfs/TB1R.aPDSzqK1RjSZFjXXblCFXa-2860-1580.png",
+      "https://img.alicdn.com/tfs/TB1p1mTDQvoK1RjSZFNXXcxMVXa-2860-1580.png"
+    ]
+  },
+  "title": "SCMS2"
+}

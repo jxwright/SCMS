@@ -19,6 +19,11 @@ const asideMenuConfig = [
     icon: 'repair',
   },
   {
+    name: '摄像头管理',
+    path: '/cmanagement',
+    icon: 'home2',
+  },
+  {
     name: '反馈',
     path: 'https://github.com/alibaba/ice/issues/new',
     icon: 'question2',

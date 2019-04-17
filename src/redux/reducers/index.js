@@ -1,8 +1,9 @@
-import {postsBySubreddit,selectedSubreddit} from './loginPage'
+import {loginReducer} from './loginPage'
+import {registerReducer} from './registerPage'
 import { combineReducers } from 'redux'
 const rootReducer = combineReducers({
-    postsBySubreddit,
-    selectedSubreddit
+    register:registerReducer,
+    login:loginReducer
   })
   
   export default rootReducer

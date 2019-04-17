@@ -39,7 +39,8 @@ export default class Header extends Component {
               {headerMenuConfig &&
                 headerMenuConfig.length > 0 &&
                 headerMenuConfig.map((nav, index) => {
-                  if (nav.children && nav.children.length > 0) {
+                  
+                  if (nav.children && nav.children.length > 0) {             
                     return (
                       <SubMenu
                         triggerType="click"

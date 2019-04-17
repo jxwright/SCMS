@@ -27,7 +27,7 @@ class UserLogin extends Component {
     super(props);
     this.state = {
       value: {
-        username: '',
+        username: 'eee',
         password: '',
         checkbox: false,
       },
@@ -47,7 +47,7 @@ class UserLogin extends Component {
         console.log('errors', errors);
         return;
       }
-
+      console.log(values);
       this.props.userLogin(values);
  //     console.log(values);
   //    Message.success('登录成功');
@@ -58,7 +58,7 @@ class UserLogin extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <h4 style={styles.title}>登 录</h4>
+        <h4 style={styles.title}>登 录{this.props.login.loginInfo}</h4>
         <IceFormBinderWrapper
           value={this.state.value}
           onChange={this.formChange}
@@ -67,7 +67,7 @@ class UserLogin extends Component {
           <div style={styles.formItems}>
             <div style={styles.formItem}>
               <IceIcon type="person" size="small" style={styles.inputIcon} />
-              <IceFormBinder name="username" required message="必填">
+              <IceFormBinder name="username" required message="必填">           
                 <Input
                   size="large"
                   maxLength={20}
@@ -107,7 +107,7 @@ class UserLogin extends Component {
                 登 录
               </Button>
               <Link to="/user/register" style={styles.tips}>
-               1 立即注册{this.props.loginInfo}
+               1 立即注册{this.props.login.loginInfo}
               </Link>
             </div>
           </div>
@@ -163,8 +163,7 @@ function mapStateToProps1(state) {
   };
 }
 const mapStateToProps = (state) => {
-  alert(state.loginInfo)
-  return { loginResult: state.login,loginInfo: state.loginInfo };
+  return { login: state.login};
 };
 // 在这个对象中, 属性名会成为 prop 的 names,
 // 属性值应该是 action 生成器函数.

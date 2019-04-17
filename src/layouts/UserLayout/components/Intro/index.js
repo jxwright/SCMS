@@ -4,7 +4,7 @@ const LoginIntro = () => {
   return (
     <div style={styles.container}>
       <div style={styles.content}>
-        <div style={styles.title}>算法模型管理系统</div>
+        <div style={styles.title}>智慧城市管理系统</div>
         <p style={styles.description}>一体化的整合式模型服务管理平台</p>
         <p style={styles.description}>一起解构数字世界，碰撞科技创新思想</p>
       </div>

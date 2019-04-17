@@ -59,6 +59,12 @@ export function userLoginSuccess(subreddit) {
     }
   };
   export const userLogin = (params) => {
+
+    return {
+      type: c.USER_LOGIN_REQUEST,
+      loginInfo:params.username
+    }
+    /*
     return async (dispatch) => {
       dispatch(userLoginRequest());
       try {
@@ -80,5 +86,5 @@ export function userLoginSuccess(subreddit) {
       } catch (error) {
         dispatch(userLoginFailure(error));
       }
-    };
+    };*/
   };

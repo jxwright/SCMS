@@ -51,4 +51,22 @@ export function selectedSubreddit(state = 'reactjs', action) {
         return state
     }
   }
-  
+
+  export function loginReducer(state = {}, action) {
+    switch (action.type) {
+      case c.USER_LOGIN_REQUEST:
+        return Object.assign({}, state, {
+          loginInfo: action.loginInfo,
+        });
+      case c.USER_LOGIN_SUCCESS:
+        return Object.assign({}, state, {
+          loginInfo: action.loginInfo,
+        });
+      case c.USER_LOGIN_FAILURE:
+        return Object.assign({}, state, {
+          loginInfo: action.loginInfo,
+        });
+      default:
+        return state;
+    }
+  }

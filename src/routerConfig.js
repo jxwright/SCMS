@@ -23,6 +23,10 @@ const routerConfig = [
     component: ModelManagement,
   },
   {
+    path: '/cmanagement',
+    component: ModelManagement,
+  },
+  {
     path: '/market',
     component: ModelMarket,
   },

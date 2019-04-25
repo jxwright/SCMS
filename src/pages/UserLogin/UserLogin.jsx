@@ -13,7 +13,7 @@ import {
   userLogin,
   userLoginFailure,
   userLoginSuccess
-} from '../../redux/actions/loginPage'
+} from './actions'
 
 @withRouter
 class UserLogin extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Input } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import ContainerTitle from '../../../../components/ContainerTitle';
-
+import { Message} from '@alifd/next';
 // MOCK 数据，实际业务按需进行替换
 const getData = () => {
   return Array.from({ length: 6 }).map((item, index) => {
@@ -26,8 +26,21 @@ export default class ModelList extends Component {
   }
   componentWillReceiveProps(nextprops) {
 
-    let isFunction = false;
-    alert(nextprops.caseData+'----2');
+    if(nextprops.caseData)
+        {
+            let isFunction = false;
+            alert(nextprops.caseData+'----2');
+            let msg = JSON.parse(nextprops.caseData);
+            try {
+                isFunction = typeof (eval(msg.topic)) == "function"
+            } catch (e) { }
+    
+            if (isFunction) {
+                Message.warning(nextprops.caseData+' is a Function!');
+            } else {
+                Message.warning('showFace is not a Function!');
+            } 
+        }
 }
   /**
    * Input 发生改变的时候触发的回调

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import '@alifd/next/reset.scss';
 import router from './router';
 import { Provider } from 'react-redux';
-import configureStore from './redux'
+import configureStore from './configureStore'
 
 const ICE_CONTAINER = document.getElementById('ice-container');
 const initialState = {
@@ -15,11 +15,14 @@ const initialState = {
 
 const loadState = () => {
   try { // 也可以容错一下不支持localStorage的情况下，用其他本地存储
-    const serializedState = localStorage.getItem('state');
+    const serializedState = localStorage.getItem('login');
     if (serializedState === null) {
       return undefined;
     } else {
-      return JSON.parse(serializedState);
+      console.log("loadState",JSON.parse(serializedState));
+      return {
+        login:JSON.parse(serializedState)
+      }
     }
   } catch (err) {
     // ... 错误处理
@@ -30,17 +33,17 @@ const loadState = () => {
 const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem('state', serializedState);
+    localStorage.setItem('login', serializedState);
   } catch (err) {
     // ...错误处理
   }
 };
 const store = configureStore(loadState());
-console.log(store.getState());
 store.subscribe(function () {
   console.log("subscribe",store.getState());
   const state = store.getState();
-  saveState(state);
+
+  saveState(state.login);
 });
 if (!ICE_CONTAINER) {
   throw new Error('当前页面不存在 <div id="ice-container"></div> 节点.');

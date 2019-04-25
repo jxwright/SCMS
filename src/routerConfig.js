@@ -7,6 +7,8 @@ import ModelMarket from './pages/ModelMarket';
 import ModelPerformance from './pages/ModelPerformance';
 import UserLogin from './pages/UserLogin';
 import UserRegister from './pages/UserRegister';
+
+import CameraManagement from './pages/CameraManagement';
 import Setting from './pages/Setting';
 
 const routerConfig = [
@@ -23,10 +25,6 @@ const routerConfig = [
     component: ModelManagement,
   },
   {
-    path: '/cmanagement',
-    component: ModelManagement,
-  },
-  {
     path: '/market',
     component: ModelMarket,
   },
@@ -37,6 +35,10 @@ const routerConfig = [
   {
     path: '/setting',
     component: Setting,
+  },
+  {
+    path: '/CameraManage',
+    component: CameraManagement,
   },
 ];
 

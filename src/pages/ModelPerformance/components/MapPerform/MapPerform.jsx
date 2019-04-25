@@ -22,7 +22,7 @@ import Img from '@icedesign/img';
 import 'ol/ol.css';
 import './olbasemap.scss';
 import videojs from 'video.js'
-import StreamedianPlayer from '../../components/StreamedianPlayer';
+import StreamedianPlayer from '../../../../components/StreamedianPlayer';
 
 import 'video.js/dist/video-js.css';
 
@@ -46,19 +46,22 @@ export default class MapPerform extends Component {
     }
 
     componentWillReceiveProps(nextprops) {
-
-        let isFunction = false;
-        alert(nextprops.caseData+'----1');
-        let msg = JSON.parse(nextprops.caseData);
-        try {
-            isFunction = typeof (eval(msg.topic)) == "function"
-        } catch (e) { }
-
-        if (isFunction) {
-            Message.warning(nextprops.caseData+' is a Function!');
-        } else {
-            Message.warning('showFace is not a Function!');
+        if(nextprops.caseData)
+        {
+            let isFunction = false;
+            alert(nextprops.caseData+'----1');
+            let msg = JSON.parse(nextprops.caseData);
+            try {
+                isFunction = typeof (eval(msg.topic)) == "function"
+            } catch (e) { }
+    
+            if (isFunction) {
+                Message.warning(nextprops.caseData+' is a Function!');
+            } else {
+                Message.warning('showFace is not a Function!');
+            } 
         }
+        
     }
 
     componentDidMount() {
@@ -247,7 +250,7 @@ export default class MapPerform extends Component {
         }
     }
     subscribe = () => {
-        const response = axios.post('http://192.0.0.66:9199/mds/subscribe',
+       axios.post('http://192.0.0.66:9199/mds/subscribe',
             { "token": this.token, "topic": 'alarmInfo', "tag": 'area' }
         ).then(function (response) {
 
